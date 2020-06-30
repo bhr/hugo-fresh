@@ -42,6 +42,13 @@ Section Styles
     }
 }
 
+.vertically-center-content {
+    display: flex; 
+    flex-grow: 1; 
+    justify-content: center; 
+    align-items:center;
+}
+
 //Divider
 .divider {
     height: 3px;
