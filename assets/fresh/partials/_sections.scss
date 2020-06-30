@@ -18,17 +18,13 @@ Section Styles
     }
     .title, .subtitle {
         font-family: 'Open Sans', sans-serif;
-
     }
+
     .subtitle {
         &.is-muted {
             color: $muted-grey;
         }
     }
-}
-
-a {
-    color: $primary;
 }
 
 //Titles
@@ -111,4 +107,14 @@ img.pushed-image {
     min-width: 10rem;
     // flex-grow: 5;
     // flex-shrink: 1;
+}
+
+// Common
+
+a {
+    color: $primary;
+}
+
+span.line {
+    display: inline-block;
 }
