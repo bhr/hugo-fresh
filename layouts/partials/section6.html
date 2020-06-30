@@ -2,6 +2,10 @@
 {{- $title    := index $section2 "title" }}
 {{- $subtitle := index $section2 "subtitle" }}
 {{- $features := index $section2 "features" }}
+{{- $primarycolor := .Site.Params.colors.primary }}
+{{- $secondarycolor := .Site.Params.colors.secondary }}
+{{- $accentcolor := .Site.Params.colors.accent }}
+
 <section class="section section-feature-grey">
   <div class="container">
     <div class="columns">
@@ -14,15 +18,16 @@
       {{ end }}
       <div class="column is-7">
         {{- range $features }}
-        <article class="media icon-box">
-          {{ if .icon }}
-          <figure class="media-left">
-            <p class="image">
-              <img src="{{ printf "/images/illustrations/%s" .icon | relURL }}">
-            </p>
+        <article class="media icon-box mt-50">
+          {{ with .icon }}
+          <figure class="media-left" style="padding-top: 0.2rem;">
+            <!-- <i data-vi="{{ printf "%s" . }}" data-vi-primary="{{ printf "%s" $primarycolor }}"
+              data-vi-accent="{{ printf "%s" $secondarycolor }}" data-vi-prop="{{ printf "%s" $accentcolor }}" data-vi-size="36"></i> -->
+            <i data-vi="{{ printf "%s" . }}" data-vi-primary="ffb5d7" data-vi-accent="{{ printf "%s" $primarycolor }}"
+              data-vi-size="36"></i>
           </figure>
           {{ end }}
-          <div class="media-content mt-50">
+          <div class="media-content">
             <div class="content">
               <p>
                 <span class="icon-box-title">{{ .title }}</span>
