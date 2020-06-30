@@ -68,10 +68,16 @@ img.pushed-image {
         max-width: 35rem;
         align-items: center;
         // min-width: 20rem;
-    }
+}
+
+.mt-3rem + .mt-3rem {
+    margin-top: 3rem !important;
+}
+
 //Icon box
 .media.icon-box {
     border-top: none !important;
+
     .media-content .right-align {
         text-align:right;
     }

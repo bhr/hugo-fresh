@@ -6,7 +6,7 @@
 {{- $secondarycolor := .Site.Params.colors.secondary }}
 {{- $accentcolor := .Site.Params.colors.accent }}
 
-<section class="section section-feature-grey">
+<section class="section section-feature-grey is-medium">
   <div class="container">
     <div class="columns">
       {{ if or ($title) ($subtitle) }}
@@ -18,7 +18,7 @@
       {{ end }}
       <div class="column is-7">
         {{- range $features }}
-        <article class="media icon-box mt-50">
+        <article class="media icon-box mt-3rem">
           {{ with .icon }}
           <figure class="media-left" style="padding-top: 0.2rem;">
             <!-- <i data-vi="{{ printf "%s" . }}" data-vi-primary="{{ printf "%s" $primarycolor }}"
