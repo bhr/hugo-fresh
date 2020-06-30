@@ -38,10 +38,10 @@ Navbar
     }
     //Navbar items
     .navbar-item {
-        color: $muted-grey;
+        color: $primary;
         &.is-secondary {
             &:hover {
-                color: $secondary !important;
+                color: $primary-hover !important;
             }
         }
         &.has-dropdown {
@@ -67,7 +67,7 @@ Navbar
             }
             &:hover {
                 .navbar-link {
-                    color: $secondary;
+                    color: $primary-hover;
                     &:after {
                         border-color: $secondary;
                     }
@@ -91,9 +91,9 @@ Navbar
         background: $white;
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
         a {
-            color: $blue-grey;
+            color: $primary;
             &:hover {
-                color: $primary;
+                color: $primary-hover;
             }
         }
     }

@@ -4,29 +4,46 @@
 {{- $features := index $section2 "features" }}
 <section class="section is-medium">
   <div class="container">
+    <div class="is-centered-tablet-portrait">
+      <h1 class="title section-title">{{ $title }}</h1>
+      <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
+      <div class="divider"></div>
+    </div>
     <div class="columns">
-      <div class="column is-centered-tablet-portrait">
-        <h1 class="title section-title">{{ $title }}</h1>
-        <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
-        <div class="divider"></div>
-      </div>
-      <div class="column is-7 mt-60">
-        {{- range $features }}
-        <article class="media icon-box">
-          <figure class="media-left">
+      <div class="is-10 mt-60 center-content">
+        {{- range $index, $feature := $features }}
+        <article class="media icon-box media-content-max-width">
+          {{ if modBool $index 2 }}
+          <figure class="media-left media-box-icon">
             <p class="image">
-              <img src="{{ printf "/images/illustrations/icons/%s.svg" .icon | relURL }}">
+              <img src="{{ printf "/images/illustrations/%s" .icon | relURL }}">
             </p>
           </figure>
-          <div class="media-content mt-50">
+          <div class="media-content">
             <div class="content">
               <p>
                 <span class="icon-box-title">{{ .title }}</span>
-
                 <span class="icon-box-text">{{ .text | markdownify }}</span>
+                <span class="icon-box-text">{{ .text2 | markdownify }}</span>
               </p>
             </div>
           </div>
+          {{ else }}
+          <div class="media-content">
+            <div class="content right-align">
+              <p>
+                <span class="icon-box-title">{{ .title }}</span>
+                <span class="icon-box-text">{{ .text | markdownify }}</span>
+                <span class="icon-box-text">{{ .text2 | markdownify }}</span>
+              </p>
+            </div>
+          </div>
+          <figure class="media-right media-box-icon">
+            <p class="image">
+              <img src="{{ printf "/images/illustrations/%s" .icon | relURL }}">
+            </p>
+          </figure>
+          {{ end }}
         </article>
         {{- end }}
       </div>

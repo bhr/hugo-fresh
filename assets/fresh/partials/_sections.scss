@@ -27,6 +27,10 @@ Section Styles
     }
 }
 
+a {
+    color: $primary;
+}
+
 //Titles
 .title-wrapper {
     max-width: 500px;
@@ -64,9 +68,21 @@ img.pushed-image {
     margin-top: -5vh;
 }
 
+.media.icon-box.media-content-max-width {
+        max-width: 35rem;
+        align-items: center;
+        // min-width: 20rem;
+    }
 //Icon box
 .media.icon-box {
     border-top: none !important;
+    .media-content .right-align {
+        text-align:right;
+    }
+    .media-content {
+        flex-shrink: 2;
+    }
+
     .media-content .content p {
         span {
             display: block;
@@ -82,4 +98,17 @@ img.pushed-image {
             font-weight: 400;
         }
     }
+}
+
+.center-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.media-box-icon {
+    max-width: 20rem;
+    min-width: 10rem;
+    // flex-grow: 5;
+    // flex-shrink: 1;
 }
