@@ -89,7 +89,9 @@ img.pushed-image {
         text-align:right;
     }
     .media-content {
-        flex-shrink: 2;
+        flex-basis: 0;
+        flex-shrink: 1;
+        flex-grow: 1;
     }
 
     .media-content .content p {
@@ -116,10 +118,13 @@ img.pushed-image {
 
 
 .media-box-icon {
-    max-width: 20rem;
-    min-width: 10rem;
-    // flex-grow: 5;
-    // flex-shrink: 1;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    p img {
+        max-height: 15rem;
+        width: auto;
+    }
 }
 
 // Common

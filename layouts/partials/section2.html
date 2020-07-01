@@ -14,7 +14,7 @@
         {{- range $index, $feature := $features }}
         <article class="media icon-box media-content-max-width">
           {{ if modBool $index 2 }}
-          <figure class="media-left media-box-icon">
+          <figure class="media-right media-box-icon">
             <p class="image">
               <img src="{{ printf "/images/illustrations/%s" .icon | relURL }}">
             </p>
@@ -38,7 +38,7 @@
               </p>
             </div>
           </div>
-          <figure class="media-right media-box-icon">
+          <figure class="media-left media-box-icon">
             <p class="image">
               <img src="{{ printf "/images/illustrations/%s" .icon | relURL }}">
             </p>
