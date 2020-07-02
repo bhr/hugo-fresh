@@ -216,3 +216,35 @@ span.line {
 .title.is-6 {
     margin-top: 1rem;
 }
+
+// Overrride content for markdown files
+
+.md-content {
+    dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe {
+        margin: unset !important;
+        padding: unset !important;
+    }
+    
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    ul, ol {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+    ul {
+        list-style-type: disc;
+    }
+    ul ul {
+        list-style-type: circle;
+    }
+}
