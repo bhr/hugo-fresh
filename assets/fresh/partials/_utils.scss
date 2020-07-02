@@ -193,33 +193,33 @@ span.line {
 }
 
 
-.title.is-1 {
-    margin-top: 5rem;
-}
-
-.title.is-2 {
-    margin-top: 4.25rem;
-}
-
-.title.is-3 {
-    margin-top: 3.75rem;
-}
-
-.title.is-4 {
-    margin-top: 3rem;
-}
-
-.title.is-5 {
-    margin-top: 2rem;
-}
-
-.title.is-6 {
-    margin-top: 1rem;
-}
-
 // Overrride content for markdown files
 
 .md-content {
+    .title.is-1 {
+        margin-top: 5rem;
+    }
+
+    .title.is-2 {
+        margin-top: 4.25rem;
+    }
+
+    .title.is-3 {
+        margin-top: 3.75rem;
+    }
+
+    .title.is-4 {
+        margin-top: 3rem;
+    }
+
+    .title.is-5 {
+        margin-top: 2rem;
+    }
+
+    .title.is-6 {
+        margin-top: 1rem;
+    }
+
     dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe {
         margin: unset !important;
         padding: unset !important;
