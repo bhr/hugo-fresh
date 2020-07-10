@@ -1,22 +1,27 @@
-{{- $section2 := .Site.Params.section6 }}
-{{- $title    := index $section2 "title" }}
-{{- $subtitle := index $section2 "subtitle" }}
-{{- $features := index $section2 "features" }}
+{{- $section6 := .Site.Params.section6 }}
+{{- $title    := index $section6 "title" }}
+{{- $subtitle := index $section6 "subtitle" }}
+{{- $image := index $section6 "image" }}
+{{- $features := index $section6 "features" }}
 {{- $primarycolor := .Site.Params.colors.primary }}
 {{- $secondarycolor := .Site.Params.colors.secondary }}
 {{- $accentcolor := .Site.Params.colors.accent }}
 
 <section class="section section-feature-grey is-medium">
   <div class="container">
-    <div class="columns">
-      {{ if or ($title) ($subtitle) }}
-      <div class="column is-centered-tablet-portrait">
-        <h1 class="title section-title">{{ $title }}</h1>
-        <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
-        <div class="divider"></div>
+    <div class="columns reverse-columns columns-wide">
+      {{ if ($image) }}
+      <div class="column is-5 vertical-center">
+        <article class="media icon-box ml-30">
+          <figure class="media-right hero-box-icon">
+            <p class="image">
+              <img src="{{ printf "/images/illustrations/%s" $image | relURL }}">
+            </p>
+          </figure>
+        </article>
       </div>
       {{ end }}
-      <div class="column is-7">
+      <div class="column is-7 vertical-center">
         {{- range $features }}
         <article class="media icon-box mt-3rem">
           {{ with .icon }}
@@ -40,6 +45,13 @@
         </article>
         {{- end }}
       </div>
+      {{ if or ($title) ($subtitle) }}
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title section-title">{{ $title }}</h1>
+        <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
+        <div class="divider"></div>
+      </div>
+      {{ end }}
     </div>
   </div>
 </section>
