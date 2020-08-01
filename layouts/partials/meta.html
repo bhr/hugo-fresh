@@ -2,7 +2,32 @@
 {{ if eq .Site.Params.openGraph true }}
 {{ template "_internal/opengraph.html" . }}
 {{ end }}
-<meta name="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Hardcoded description; the author should update :){{ end }}" />
+{{ if eq .Site.Params.twitterCards true }}
+{{ template "_internal/twitter_cards.html" . }}
+{{ end }}
+
+{{/*  Title  */}}
+{{ .Scratch.Set "composedTitle" ( printf "%s | %s" .Title .Site.Title ) }}
+{{ if eq .Title .Site.Title }}
+{{ if .Site.Params.title }}
+{{ .Scratch.Set "composedTitle" ( printf "%s | %s" .Site.Params.title .Site.Title ) }}
+{{ else }} {{ .Scratch.Set "composedTitle" .Title }}
+{{ end }}
+{{ end }}
+
+{{ $composedTitle := .Scratch.Get "composedTitle"}}
+<title itemprop="name">{{ $composedTitle }}</title>
+<meta itemprop="name" content="{{ $composedTitle }}" />
+<meta name="application-name" content="{{ $composedTitle }}" />
+
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+{{ if .Site.Params.appID }}
+<meta name="apple-itunes-app" content="app-id={{ .Site.Params.appID }}" />
+{{ end }}
+
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
