@@ -17,7 +17,11 @@
     </section>
     <div class="divider"></div>
     {{ end }}
+    {{ if .Params.static_content }}
     <section class="section is-small md-content">
+    {{ else }}
+    <section class="section is-small md-content md-article">
+    {{ end }}
       {{ .Content }}
     </section>
   </div>

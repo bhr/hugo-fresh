@@ -223,6 +223,7 @@ span.line {
 // Overrride content for markdown files
 
 .md-content {
+
     .title.is-1 {
         margin-top: 5rem;
     }
@@ -272,7 +273,7 @@ span.line {
         margin-block-end: 1em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
-        font-size:larger;
+        font-size: larger;
     }
 
     ul, ol {
@@ -289,4 +290,9 @@ span.line {
     ul ul {
         list-style-type: circle;
     }
+}
+
+.md-article {
+    max-width: 700px;
+    margin:auto;
 }
