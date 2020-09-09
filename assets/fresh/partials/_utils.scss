@@ -247,6 +247,20 @@ span.line {
         margin-top: 1rem;
     }
 
+    .img-container {
+        text-align: center;
+        display: block;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .img-title {
+        font-style: italic;
+        font-size: smaller;
+        margin-block-start: 0.3rem;
+        margin-block-end: 0.0rem;
+    }
+
     dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe {
         margin: unset !important;
         padding: unset !important;
@@ -258,6 +272,7 @@ span.line {
         margin-block-end: 1em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
+        font-size:larger;
     }
 
     ul, ol {
