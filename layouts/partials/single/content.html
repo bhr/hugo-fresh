@@ -4,7 +4,7 @@
       <div class="column is-centered-tablet-portrait">
         <h1 class="title section-title">{{ .Title }}</h1>
         <h5 class="subtitle is-5">{{ .Params.Subtitle }}</h5>
-        {{- if not .Params.hideLastModified -}}
+        {{- if not .Params.hide_last_modified -}}
         <h6 class="subtitle is-6 is-muted">{{- .Lastmod.Format "2 January 2006" -}}</h6>
         {{- end -}}
         <div class="divider"></div>
