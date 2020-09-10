@@ -6,6 +6,21 @@
 {{ template "_internal/twitter_cards.html" . }}
 {{ end }}
 
+{{/*  Author and Publisher  */}}
+{{- if .IsPage }}
+  {{ if .Params.Author }}
+    {{ $authorName := .Params.Author }}
+    {{ with index .Site.Params.Authors $authorName }}
+      {{ with .Social.facebook }}
+        <meta property="article:author" content="https://www.facebook.com/{{ . }}" />
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ with .Params.Publisher }}
+    <meta property="article:publisher" content="https://www.facebook.com/{{ . }}" />
+  {{ end }}
+{{ end }}
+
 {{/*  Title  */}}
 {{ .Scratch.Set "composedTitle" ( printf "%s | %s" .Title .Site.Title ) }}
 {{ if eq .Title .Site.Title }}
