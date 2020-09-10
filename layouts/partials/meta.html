@@ -23,9 +23,8 @@
 <meta name="robots" content="index,follow" />
 <meta name="googlebot" content="index,follow" />
 
-{{ if .Site.Params.appID }}
-<meta name="apple-itunes-app" content="app-id={{ .Site.Params.appID }}" />
-{{ end }}
+{{ with .Site.Params.AppStore.AppID }}<meta name="apple-itunes-app" content="app-id={{ . }}" />{{ end }}
+{{ with .Site.Params.Facebook.AppID }}<meta property="fb:app_id" content="{{ . }}" />{{ end }}
 
 
 <meta charset="utf-8">
