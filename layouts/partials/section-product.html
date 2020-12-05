@@ -1,10 +1,9 @@
-{{- $hero       := .Site.Params.hero }}
-{{- $title      := index $hero "title" }}
-{{- $subtitle   := index $hero "subtitle" }}
-{{- $buttonText := index $hero "buttontext" }}
-{{- $buttonLink := index $hero "buttonlink" }}
-{{- $image      := index $hero "image" }}
-<div class="hero-body is-halfheight">
+{{- $sectionProduct := .Site.Params.sectionProduct }}
+{{- $title          := index $sectionProduct "title" }}
+{{- $description    := index $sectionProduct "description" }}
+{{- $image          := index $sectionProduct "image" }}
+
+<section class="section section-feature-grey is-medium">
   <div class="container">
     <div class="columns is-vcentered">
       <!-- TEXT LEFT SIDE -->
@@ -12,9 +11,9 @@
         <article class="media icon-box mt-3rem">
           <div class="media-content">
             <div class="content">
-              <h1 class="title is-1">{{ $title }}</h1>
+              <h1 class="title is-3">{{ $title }}</h1>
               <p class="icon-box-text">
-                {{ $subtitle | markdownify }}
+                {{ $description | markdownify }}
               </p>
             </div>
           </div>
@@ -34,4 +33,4 @@
       {{ end }}
     </div>
   </div>
-</div>
+</section>

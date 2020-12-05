@@ -103,12 +103,13 @@ img.pushed-image {
             font-size: 1.2rem;
             font-weight: 600;
         }
-        .icon-box-text {
-            color: $title-grey;
-            font-size: 1rem;
-            font-weight: 400;
-        }
     }
+}
+
+.icon-box-text {
+    color: $title-grey;
+    font-size: 1.3rem;
+    font-weight: 400;
 }
 
 .center-content {

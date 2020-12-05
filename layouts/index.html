@@ -3,6 +3,14 @@
 {{ partial "hero.html" . }}
 {{ end }}
 
+{{ if .Site.Params.sectionProduct }}
+{{ partial "section-product.html" . }}
+{{ end }}
+
+{{ if .Site.Params.sectionFeatures }}
+{{ partial "section-features.html" . }}
+{{ end }}
+
 {{ if .Site.Params.section6 }}
 {{ partial "section6.html" . }}
 {{ end }}

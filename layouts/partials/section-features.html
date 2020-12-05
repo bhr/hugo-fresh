@@ -1,10 +1,15 @@
-{{- $hero       := .Site.Params.hero }}
-{{- $title      := index $hero "title" }}
-{{- $subtitle   := index $hero "subtitle" }}
-{{- $buttonText := index $hero "buttontext" }}
-{{- $buttonLink := index $hero "buttonlink" }}
-{{- $image      := index $hero "image" }}
-<div class="hero-body is-halfheight">
+{{- $sectionFeatures := .Site.Params.sectionFeatures }}
+{{- $features := index $sectionFeatures "features" }}
+{{- $primarycolor := .Site.Params.colors.primary }}
+{{- $secondarycolor := .Site.Params.colors.secondary }}
+{{- $accentcolor := .Site.Params.colors.accent }}
+
+{{- range $index, $feature := $features }}
+{{ if modBool $index 2 }}
+<section class="section is-medium">
+{{ else }}
+<section class="section section-feature-grey is-medium">
+{{- end }}
   <div class="container">
     <div class="columns is-vcentered">
       <!-- TEXT LEFT SIDE -->
@@ -12,21 +17,21 @@
         <article class="media icon-box mt-3rem">
           <div class="media-content">
             <div class="content">
-              <h1 class="title is-1">{{ $title }}</h1>
+              <h1 class="title is-3">{{ .title }}</h1>
               <p class="icon-box-text">
-                {{ $subtitle | markdownify }}
+                {{ .description | markdownify }}
               </p>
             </div>
           </div>
         </article>
       </div>
       <!-- IMAGE RIGHT SIDE -->
-      {{ if ($image) }}
+      {{ if (.image) }}
       <div class="column is-6 vertical-center">
         <article class="media icon-box ml-30">
           <figure class="media-right hero-box-icon">
             <p class="image">
-              <img src="{{ printf "/images/illustrations/%s" $image | relURL }}">
+              <img src="{{ printf "/images/illustrations/%s" .image | relURL }}">
             </p>
           </figure>
         </article>
@@ -34,4 +39,5 @@
       {{ end }}
     </div>
   </div>
-</div>
+</section>
+{{- end }}
