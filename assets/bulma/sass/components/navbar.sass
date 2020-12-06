@@ -140,9 +140,10 @@ body
 .navbar-burger
   +hamburger($navbar-height)
   margin-left: auto
+  display: none
 
 .navbar-menu
-  display: none
+  display: flex
 
 .navbar-item,
 .navbar-link
@@ -217,8 +218,8 @@ a.navbar-item,
   margin: 0.5rem 0
 
 +touch
-  .navbar > .container
-    display: block
+  //.navbar > .container
+  //  display: block
   .navbar-brand,
   .navbar-tabs
     .navbar-item
@@ -227,12 +228,12 @@ a.navbar-item,
   .navbar-link
     &::after
       display: none
-  .navbar-menu
-    background-color: $navbar-background-color
-    box-shadow: 0 8px 16px rgba($black, 0.1)
-    padding: 0.5rem 0
-    &.is-active
-      display: block
+  // .navbar-menu
+  //  background-color: $navbar-background-color
+  //  box-shadow: 0 8px 16px rgba($black, 0.1)
+  //  padding: 0.5rem 0
+  //  &.is-active
+  //    display: block
   // Fixed navbar
   .navbar
     &.is-fixed-bottom-touch,
@@ -256,6 +257,23 @@ a.navbar-item,
       padding-top: $navbar-height
     &.has-navbar-fixed-bottom-touch
       padding-bottom: $navbar-height
+
+.navbar,
+  .navbar-menu,
+  .navbar-start,
+  .navbar-end
+    align-items: stretch
+    display: flex
+    flex-grow: 1
+    flex-shrink: 0
+.container > .navbar
+    .navbar-brand
+      margin-left: -1rem
+    .navbar-menu
+      margin-right: -1rem
+.navbar-end
+  justify-content: flex-end
+  margin-left: auto
 
 +desktop
   .navbar,

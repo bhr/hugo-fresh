@@ -12,6 +12,7 @@ Classes to change the feel of bulma buttons
         font-size: 1rem;
         font-weight: 600;
         padding: 26px 40px 26px 40px;
+        min-width: 8rem;
     }
     &.is-clear {
         line-height: 0 !important;

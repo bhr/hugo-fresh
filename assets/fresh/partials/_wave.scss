@@ -1,0 +1,28 @@
+.wavy-blob {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.wavy-shape-gradient {
+  --color-stop: #debba1;
+  --color-bot: #f0d4bf;
+}
+
+
+@media screen and (max-width: 1090px) {
+  .wavy-blob {
+    width: 60%;
+  }
+}
+
+    
+@media screen and (max-width: 746px) {
+  .wavy-blob {
+    width: 65%;
+    top: -60px;
+  }
+}

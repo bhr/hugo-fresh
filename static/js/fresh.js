@@ -141,4 +141,64 @@ $(document).ready(function(){
             }
         }
     });
+
+    // #################
+    // EMAIL FORM
+    // #################
+
+    document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+    // Submit form
+    function submitForm(e) {
+        e.preventDefault();
+
+        // Get values
+        var name = getInputVal('name');
+        var company = getInputVal('company');
+        var email = getInputVal('email');
+        var role = getInputVal('role');
+        var message = getInputVal('message');
+
+        // Save message
+        sendEmail(name, company, email, role, message).then( success => {
+
+            let bannerSelector = success ? '.success' : '.error'
+            // Show alert
+            document.querySelector(bannerSelector).style.display = 'block';
+
+            if (success) {
+                
+                // Hide alert after 3 seconds
+                setTimeout(function() {
+                    document.querySelector(bannerSelector).style.display = 'none';
+                }, 3000);
+
+                document.getElementById('contactForm').reset();
+            }
+            
+        });
+    }
+
+    // Function to get get form values
+    function getInputVal(id) {
+        return document.getElementById(id).value;
+    }
+
+    async function sendEmail(name, company, email, role, message) {
+        data = {
+            name: name,
+            company: company,
+            email: email,
+            role: role,
+            message: message
+        };
+        let result = await fetch("https://europe-west1-vestico-6a86c.cloudfunctions.net/http-api-contactSales", {
+            method: "POST", 
+            body: JSON.stringify(data),
+            mode: 'cors'
+        }).catch(err => console.error(err));
+        console.log(result)
+        let success = result !== undefined && result.status === 200
+        return success;
+    }
 })

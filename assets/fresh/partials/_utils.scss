@@ -296,3 +296,19 @@ span.line {
     max-width: 700px;
     margin:auto;
 }
+
+.alert {
+    text-align: center;
+    padding:10px;
+    color:#fff;
+    margin-bottom:10px;
+    display:none;
+}
+
+.success {
+    background:#79c879;
+}
+
+.error {
+    background:#f17070;
+}

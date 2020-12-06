@@ -5,23 +5,23 @@ Navbar
 //Navbar
 .navbar.is-fresh {
     position: relative;
-    min-height: 3.8rem;
+    min-height: .8rem;
     transition: all .3s;
     z-index: 99;
     .container {
-        min-height: 4rem;
+        min-height: 7rem;
     }
     &.no-shadow {
         box-shadow: none !important;
     }
     //Responsive menu icon
     .navbar-burger {
-        width: 4rem;
-        height: 4rem;
+        width: 7rem;
+        height: 7rem;
     }
     //Brand
     .navbar-brand {
-        min-height: 4rem;
+        min-height: 7rem;
         img {
             max-height: 50px !important;
             height: 50px;
@@ -87,7 +87,7 @@ Navbar
         top: 0;
         left: 0;
         width: 100%;
-        min-height: 4rem !important;
+        min-height: 7rem !important;
         background: $white;
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
         a {
