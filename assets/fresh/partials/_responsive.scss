@@ -39,6 +39,14 @@ Responsive Styles
     .testimonial {
         margin: 0 auto;
     }
+
+    .columns {
+        flex-direction: column;
+    }
+    
+    .reverse-flow {
+        flex-direction: column-reverse !important;
+    }
 }
 
 
