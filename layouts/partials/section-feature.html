@@ -1,0 +1,16 @@
+{{- $feature := .feature }}
+{{- $direction := .direction }}
+
+{{ if in $direction "left" }}
+<div class="columns reverse-flow">
+{{ else }}
+<div class="columns">
+{{ end }}
+  {{ if in $direction "left" }}
+    {{ partial "section-feature-image.html" (dict "feature" $feature "direction" $direction) }}
+    {{ partial "section-feature-text.html" (dict "feature" $feature "direction" $direction) }}
+  {{ else }}
+  {{ partial "section-feature-text.html" (dict "feature" $feature "direction" $direction) }}
+    {{ partial "section-feature-image.html" (dict "feature" $feature "direction" $direction) }}
+  {{ end }}
+</div>

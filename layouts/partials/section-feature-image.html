@@ -1,0 +1,16 @@
+{{- $feature := .feature }}
+{{- $direction := .direction }}
+
+<div class="column is-6 mt-60 center-content is-vcentered">
+    <article class="media icon-box">
+      {{ if in $direction "left" }}
+      <figure class="media-right media-box-icon">
+      {{ else }}
+      <figure class="media-right media-box-icon icon-box-right">
+      {{ end }}
+        <p class="image">
+          <img src="{{ printf "/images/illustrations/%s" $feature.image | relURL }}" />
+        </p>
+      </figure>
+    </article>
+  </div>
