@@ -9,34 +9,39 @@
 <section class="section is-medium">
 {{ else }}
 <section class="section section-feature-grey is-medium">
-{{- end }}
+{{ end }}
   <div class="container">
-    <div class="columns is-vcentered">
-      <!-- TEXT LEFT SIDE -->
-      <div class="column is-6 is-offset-1 landing-caption">
-        <article class="media icon-box mt-3rem">
+    <div class="columns">
+      <div class="is-10 mt-60 center-content full-width">
+        {{ if modBool $index 2 }}
+        <article class="media icon-box icon-box-right">
+          <figure class="media-right media-box-icon">
+            <p class="image">
+              <img src="{{ printf "/images/illustrations/%s" .image | relURL }}" />
+            </p>
+          </figure>
           <div class="media-content">
             <div class="content">
               <h1 class="title is-3">{{ .title }}</h1>
-              <p class="icon-box-text">
-                {{ .description | markdownify }}
-              </p>
+              <p class="icon-box-title">{{ .description }}</p>
             </div>
           </div>
-        </article>
-      </div>
-      <!-- IMAGE RIGHT SIDE -->
-      {{ if (.image) }}
-      <div class="column is-6 vertical-center">
-        <article class="media icon-box ml-30">
-          <figure class="media-right hero-box-icon">
+          {{ else }}
+          <article class="media icon-box">
+          <div class="media-content">
+            <div class="content">
+              <h1 class="title is-3">{{ .title }}</h1>
+              <p class="icon-box-title">{{ .description }}</p>
+            </div>
+          </div>
+          <figure class="media-left media-box-icon">
             <p class="image">
-              <img src="{{ printf "/images/illustrations/%s" .image | relURL }}">
+              <img src="{{ printf "/images/illustrations/%s" .image | relURL }}" />
             </p>
           </figure>
+          {{ end }}
         </article>
       </div>
-      {{ end }}
     </div>
   </div>
 </section>

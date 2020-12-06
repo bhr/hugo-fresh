@@ -89,9 +89,7 @@ img.pushed-image {
         text-align:right;
     }
     .media-content {
-        flex-basis: 0;
-        flex-shrink: 1;
-        flex-grow: 1;
+        flex: 1;
     }
 
     .media-content .content p {
@@ -117,14 +115,17 @@ img.pushed-image {
     margin-right: auto;
 }
 
+.full-width {
+    width: 100%;
+}
 
 .media-box-icon {
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex: 1;
     p img {
-        max-height: 15rem;
+        max-height: 20rem;
         width: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
