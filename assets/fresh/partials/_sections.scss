@@ -92,23 +92,20 @@ img.pushed-image {
         flex: 1;
     }
 
-    .media-content .content p {
-        span {
-            display: block;
-        }
-        .icon-box-title {
-            color: $blue-grey;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
+    .media-content .content p.icon-box-title {
+        color: $title-grey;
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    .media-content .content p.icon-box-text {
+        color: $muted-grey;
+        font-size: 1.2rem;
+        font-weight: 500;
     }
 }
 
-.icon-box-text {
-    color: $title-grey;
-    font-size: 1.3rem;
-    font-weight: 400;
-}
+
 
 .center-content {
     margin-left: auto;
@@ -131,7 +128,7 @@ img.pushed-image {
 
 .hero-box-icon {
     flex: 1;
-    flex-grow: 0.7;
+    flex-grow: 0.9;
     margin-left: auto;
     margin-right: auto;
     p img {
