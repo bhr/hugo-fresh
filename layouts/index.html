@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ if .Site.Params.hero }}
+{{ partial "wave.html" . }}
 {{ partial "hero.html" . }}
 {{ end }}
 
