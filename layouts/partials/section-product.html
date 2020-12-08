@@ -6,13 +6,13 @@
 
 <section class="section section-feature-grey is-medium">
   <div class="container">
-    <div class="columns is-vcentered">
+    <div class="columns">
       <!-- TEXT LEFT SIDE -->
-      <div class="column is-4 landing-caption is-mobile-flex">
+      <div class="column is-5 landing-caption is-mobile-flex">
         <article class="media icon-box mt-3rem">
           <div class="media-content">
             <div class="content">
-              <h1 class="title is-3">{{ $title }}</h1>
+              <h1 class="title is-2">{{ $title }}</h1>
               <p class="icon-box-text">
                 {{ $description | markdownify }}
               </p>
@@ -22,11 +22,11 @@
       </div>
       <!-- IMAGE or VIDEO RIGHT SIDE -->
       {{ if ($video) }}
-      <div class="column is-8 vertical-center is-mobile-flex">
+      <div class="column is-7 vertical-center is-mobile-flex">
         <article class="media icon-box">
           <figure class="media-right hero-box-icon">
             <!-- <p class="image"> -->
-              <video autoplay loop muted poster="{{ printf "/videos/%s" $image | relURL }}">
+              <video autoplay loop muted playsinline poster="{{ printf "/videos/%s" $image | relURL }}">
                 <source src={{ printf "/videos/%s" $video | relURL }} type="video/mp4"/>
                 Your browser does not support the video tag.
               </video>
@@ -35,7 +35,7 @@
         </article>
       </div>
       {{ else if ($image) }}
-      <div class="column is-8 vertical-center is-mobile-flex">
+      <div class="column is-7 vertical-center is-mobile-flex">
         <article class="media icon-box ml-30">
           <figure class="media-right hero-box-icon">
             <p class="image">

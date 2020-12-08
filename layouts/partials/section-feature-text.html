@@ -5,8 +5,8 @@
     <article class="media icon-box">
       <div class="media-content">
         <div class="content">
-          <h1 class="title is-2">{{ $feature.title }}</h1>
-          <p class="icon-box-text">{{ $feature.description }}</p>
+          <h1 class="title is-2">{{ $feature.title | markdownify }}</h1>
+          <p class="icon-box-text">{{ $feature.description | markdownify }}</p>
         </div>
       </div>
     </article>
