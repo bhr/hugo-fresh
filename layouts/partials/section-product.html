@@ -25,12 +25,14 @@
       <div class="column is-7 vertical-center is-mobile-flex">
         <article class="media icon-box">
           <figure class="media-right hero-box-icon">
-            <!-- <p class="image"> -->
-              <video autoplay loop muted playsinline poster="{{ printf "/videos/%s" $image | relURL }}">
-                <source src={{ printf "/videos/%s" $video | relURL }} type="video/mp4"/>
+            <video
+              class="lazy"
+              autoplay loop muted playsinline
+              data-src="{{ printf "/videos/%s" $video | relURL }}"
+              data-poster="{{ printf "/videos/%s" $image | relURL }}">
+              <source type="video/mp4" data-src="{{ printf "/videos/%s" $video | relURL }}" />
                 Your browser does not support the video tag.
-              </video>
-            <!-- </p> -->
+            </video>
           </figure>
         </article>
       </div>
