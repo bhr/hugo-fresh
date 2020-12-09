@@ -1,0 +1,27 @@
+{{- $image := .image }}
+{{- $src := index $image "src" }}
+{{- $type := index $image "extension" }}
+{{- $alt := index $image "alt" }}
+{{- $caption := index $image "caption" }}
+
+<div class="picture">
+  {{ if $caption}}
+  <figure>
+  {{ end }}
+    <picture>
+      <source
+        srcset="
+                {{ $src  }}.{{ $type}} 1x,
+                {{ $src }}@2x.{{ $type}} 2x,
+                {{ $src  }}@3x.{{ $type}} 3x" />
+      <!-- Fallback -->
+      <img
+        data-original="{{ $src }}.{{ $type}}"
+        data-original-set="{{ $src }}@2x.{{ $type}} 2x, {{ $src }}@3x.{{ $type}} 3x"
+        alt="{{ $alt }}" {{ if $caption }} class="img-fluid figure-img"{{ end }} />
+    </picture>
+  {{ if $caption }}
+    <figcaption>{{ $caption }}</figcaption>
+  </figure>
+  {{ end }}
+</div>
