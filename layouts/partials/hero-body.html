@@ -3,12 +3,40 @@
 {{- $subtitle   := index $hero "subtitle" }}
 {{- $buttonText := index $hero "buttontext" }}
 {{- $buttonLink := index $hero "buttonlink" }}
+{{- $video      := index $hero "video" }}
 {{- $image      := index $hero "image" }}
 
-<div class="hero-body is-halfheight">
+<div class="hero-body">
   <div class="container">
     <div class="columns is-hero reverse-flow">
-      <!-- TEXT LEFT SIDE -->
+      <!-- IMAGE LEFT/BOTTOM SIDE -->
+      {{ if ($video) }}
+      <div class="column is-6 vertical-center is-hero">
+        <article class="media icon-box">
+          <figure class="media-right hero-box-icon">
+            <video
+              class="lazy"
+              autoplay loop muted playsinline
+              data-src="{{ printf "/videos/%s" $video | relURL }}"
+              data-poster="{{ printf "/videos/%s" $image | relURL }}">
+              <source type="video/mp4" data-src="{{ printf "/videos/%s" $video | relURL }}" />
+                Your browser does not support the video tag.
+            </video>
+          </figure>
+        </article>
+      </div>
+      {{ else if ($image) }}
+      <div class="column is-6 vertical-center is-hero">
+        <article class="media icon-box">
+          <figure class="media-right hero-box-icon">
+            <p class="image">
+              <img src="{{ printf "/images/illustrations/%s" $image | relURL }}" />
+            </p>
+          </figure>
+        </article>
+      </div>
+      {{ end }}
+      <!-- TEXT RIGHT/TOP SIDE -->
       <div class="column is-6 landing-caption is-hero">
         <article class="media icon-box mt-3rem">
           <div class="media-content">
@@ -21,18 +49,6 @@
           </div>
         </article>
       </div>
-      <!-- IMAGE RIGHT SIDE -->
-      {{ if ($image) }}
-      <div class="column is-6 vertical-center is-hero">
-        <article class="media icon-box">
-          <figure class="media-right hero-box-icon">
-            <p class="image">
-              <img src="{{ printf "/images/illustrations/%s" $image | relURL }}" />
-            </p>
-          </figure>
-        </article>
-      </div>
-      {{ end }}
     </div>
   </div>
 </div>
