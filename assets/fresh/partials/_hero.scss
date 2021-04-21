@@ -21,6 +21,17 @@ Hero styles
 
 .hero-foot {
     img.partner-logo {
-        height: 70px;
+        height: 27px;
+    }
+    .title {
+        &.is-bold {
+            font-weight: 700;
+        }
+        &.is-muted {
+            color: #ccc;
+        }
+        &.is-center {
+            text-align: center;
+        }
     }
 }
