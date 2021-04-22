@@ -103,6 +103,16 @@ img.pushed-image {
         font-size: 1.2rem;
         font-weight: 500;
     }
+
+    .media-content .content li {
+        color: $muted-grey;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    .media-content .content ul {
+        list-style: circle outside;
+        margin-left: 1.2em;
+    }
 }
 
 

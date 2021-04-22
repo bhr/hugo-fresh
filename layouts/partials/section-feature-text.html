@@ -7,6 +7,13 @@
         <div class="content">
           <h1 class="title is-2">{{ $feature.title | markdownify }}</h1>
           <p class="icon-box-text">{{ $feature.description | markdownify }}</p>
+          {{ if $feature.list }}
+            <ul class="list">
+              {{- range $feature.list }}
+                <li>{{ .item | markdownify }}</li>
+              {{- end }}
+            </ul>
+          {{ end }}
         </div>
       </div>
     </article>
