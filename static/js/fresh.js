@@ -2,9 +2,19 @@ $(document).ready(function(){
     
     //Preloader
     $(window).on('load', function() { // makes sure the whole site is loaded 
-        $('#status').fadeOut(); // will first fade out the loading animation 
-        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+        // $('#status').fadeOut(); // will first fade out the loading animation 
+        // $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+        // $('body').delay(350).css({'overflow':'visible'});
+        $('html, body').animate({
+            scrollTop: 0
+        }, 10);
         $('body').delay(350).css({'overflow':'visible'});
+    })
+
+    $(window).on('DOMContentLoaded', function() { // makes sure the whole site is loaded 
+        $('html, body').animate({
+            scrollTop: 0
+        }, 10);
     })
 
     //Mobile menu toggle
